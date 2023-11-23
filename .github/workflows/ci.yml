@@ -85,7 +85,9 @@ jobs:
         run: poetry install
 
       - name: Add SSH host key
-        run: ssh-keyscan -p 2222 demo.wftpserver.com >> ~/.ssh/known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p 2222 demo.wftpserver.com >> ~/.ssh/known_hosts
 
       - name: Run pytest
         run: poetry run coverage run -m pytest tests/tests.py

@@ -247,6 +247,9 @@ class StorageObject(StorageObjectRead, StorageObjectWrite, StorageObjectGlob):
         # Ensure that the object is stored at the location specified by
         # self.local_path().
         put = self.conn.put_r if self.local_path().is_dir() else self.conn.put
+        parents = str(PosixPath(self.parsed_query.path).parent)
+        if parents != ".":
+            self.conn.makedirs(parents)
         put(
             self.local_path(),
             self.parsed_query.path,
