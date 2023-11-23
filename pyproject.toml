@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "snakemake-storage-plugin-sftp"
 version = "0.1.0"
-description = ""
+description = "A Snakemake storage plugin that handles files on an SFTP server. "
 authors = ["Johannes Koester <johannes.koester@uni-due.de>"]
 readme = "README.md"
 
