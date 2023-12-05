@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 from pathlib import PosixPath
-from typing import Any, Iterable, Optional
+from typing import Any, Iterable, List, Optional
 from urllib.parse import urlparse
 
 import pysftp
@@ -97,13 +97,15 @@ class StorageProvider(StorageProviderBase):
         self.conn_pool = dict()
 
     @classmethod
-    def example_query(cls) -> ExampleQuery:
+    def example_queries(cls) -> List[ExampleQuery]:
         """Return an example query with description for this storage provider."""
-        return ExampleQuery(
-            query="sftp://ftpserver.com:22/myfile.txt",
-            description="A file on an sftp server. "
-            "The port is optional and defaults to 22.",
-        )
+        return [
+            ExampleQuery(
+                query="sftp://ftpserver.com:22/myfile.txt",
+                description="A file on an sftp server. "
+                "The port is optional and defaults to 22.",
+            )
+        ]
 
     def use_rate_limiter(self) -> bool:
         """Return False if no rate limiting is needed for this provider."""
