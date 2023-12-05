@@ -11,6 +11,7 @@ from snakemake_interface_storage_plugins.storage_provider import (
     StorageQueryValidationResult,
     ExampleQuery,
     Operation,
+    QueryType,
 )
 from snakemake_interface_storage_plugins.storage_object import (
     StorageObjectRead,
@@ -102,6 +103,7 @@ class StorageProvider(StorageProviderBase):
         return [
             ExampleQuery(
                 query="sftp://ftpserver.com:22/myfile.txt",
+                type=QueryType.ANY,
                 description="A file on an sftp server. "
                 "The port is optional and defaults to 22.",
             )
