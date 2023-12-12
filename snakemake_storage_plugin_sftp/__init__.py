@@ -59,7 +59,7 @@ class StorageProviderSettings(StorageProviderSettingsBase):
     password: Optional[str] = field(
         default=None,
         metadata={
-            "help": "SFTP username",
+            "help": "SFTP password",
             # Optionally request that setting is also available for specification
             # via an environment variable. The variable will be named automatically as
             # SNAKEMAKE_<storage-plugin-name>_<param-name>, all upper case.
