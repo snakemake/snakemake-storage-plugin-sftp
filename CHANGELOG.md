@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/snakemake/snakemake-storage-plugin-sftp/compare/v0.1.2...v0.1.3) (2023-12-12)
+
+
+### Bug Fixes
+
+* fix wrong help text ([f577999](https://github.com/snakemake/snakemake-storage-plugin-sftp/commit/f577999a632389b53ba45b1d04c180a2c65e27b4))
+
 ## [0.1.2](https://github.com/snakemake/snakemake-storage-plugin-sftp/compare/v0.1.1...v0.1.2) (2023-12-08)
 
 
